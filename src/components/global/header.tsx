@@ -21,13 +21,13 @@ export default function Header() {
           <Link href="/" className="text-gray-600 hover:text-gray-800 transition-colors">
             Inicio
           </Link>
-          <Link href="/Features" className="text-gray-600 hover:text-gray-800 transition-colors">
+          <Link href="/features" className="text-gray-600 hover:text-gray-800 transition-colors">
             Recursos
           </Link>
-          <Link href="#ai-integration" className="text-gray-600 hover:text-gray-800 transition-colors">
+          <Link href="/catalog" className="text-gray-600 hover:text-gray-800 transition-colors">
             Catálago
           </Link>
-          <Link href="/About" className="text-gray-600 hover:text-gray-800 transition-colors">
+          <Link href="/about" className="text-gray-600 hover:text-gray-800 transition-colors">
             Sobre nós
           </Link>
           <Link href="#customer-support" className="text-gray-600 hover:text-gray-800 transition-colors">

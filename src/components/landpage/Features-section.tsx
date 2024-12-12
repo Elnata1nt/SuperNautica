@@ -1,9 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Feature, features } from "@/api/features-data";
-
 
 export default function FeaturesSection() {
   return (
@@ -23,7 +24,7 @@ export default function FeaturesSection() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {features.map((feature: Feature, index: number) => (
             <FeatureCard key={index} {...feature} />
           ))}
@@ -37,25 +38,35 @@ function FeatureCard({ image, tag, title, description }: Feature) {
   return (
     <Card className="border shadow-none">
       <CardContent className="space-y-4">
+        {/* Imagem */}
         <div className="relative mt-5 h-80 w-full">
           <Image
-            src={image} // Usando a variável 'image' para o src
+            src={image}
             alt={title}
             fill
             style={{ objectFit: "cover" }}
-            priority // Adiciona prioridade ao carregamento da imagem
-            sizes="(max-width: 768px) 100vw, 50vw" // Ajuste o valor de acordo com seu layout
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="rounded-md"
           />
         </div>
 
-        <div className="inline-block bg-orange-500/10 text-redbg-orange-500 px-4 py-1 rounded-full text-sm">
+        {/* Tag */}
+        <div className="inline-block bg-orange-500/10 text-orange-500 px-4 py-1 rounded-full text-sm">
           {tag}
         </div>
+
+        {/* Título */}
         <h3 className="text-xl font-bold">{title}</h3>
+
+        {/* Descrição */}
         <p className="text-gray-600">{description}</p>
+
+        {/* Botão */}
         <Link href="/payment" className="inline-block">
-          <Button className="bg-orange-500 hover:bg-orange-500/90">
+          <Button
+            className="bg-orange-500 hover:bg-orange-500/90"
+            aria-label={`Criar ${tag}`}
+          >
             → Quero Criar
           </Button>
         </Link>

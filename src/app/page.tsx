@@ -1,5 +1,7 @@
 "use client";
 
+import Footer from "@/components/global/footer";
+import Header from "@/components/global/header";
 import Chat from "@/components/landpage/chat";
 
 import FeaturesSection from "@/components/landpage/Features-section";
@@ -12,12 +14,14 @@ export default function LandingPage() {
   return (
     <>
       <div className="flex flex-col bg-foreground min-h-screen">
+        <Header />
         <main>
           <HeroSection />
           <Hero />
           <FeaturesSection />
           <Chat />
         </main>
+        <Footer />
       </div>
     </>
   );
